@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16110d">
+<title>Philosophy | Vora</title>
+
+<meta name="description" content="Vora is a philosophical company before it is a hardware company.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vora.io/philosophy/">
+<meta property="og:title" content="Philosophy | Vora">
+<meta property="og:description" content="Vora is a philosophical company before it is a hardware company.">
+<meta property="og:image" content="https://vora.io/philosophy/img/share-pedestal.jpg">
+<meta property="og:site_name" content="Vora">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Philosophy | Vora">
+<meta name="twitter:description" content="Vora is a philosophical company before it is a hardware company.">
+<meta name="twitter:image" content="https://vora.io/philosophy/img/share-pedestal.jpg">
+
+<link rel="preload" href="/aegis-site-preview/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/aegis-site-preview/fonts/PlayfairDisplay-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style id="philosophy-shell">
+/* Standalone shell only. When the page is lifted into SiteLayout, drop this block: the layout owns html and body. */
+html,body{margin:0;padding:0;background:#16110d}
+</style>
+<style id="philosophy-styles">
+/* ------------------------------------------------------------
+   Vora. The philosophy page. Four movements of light.
+   Everything is scoped under #philosophy: no reliance on html, body,
+   or element defaults, so it survives a preflight reset and global.css.
+   ------------------------------------------------------------ */
+
+/* Fonts, self-hosted. Same rules as fonts/fonts.css; nothing loads from a third party.
+   Static full-set files first, latin variable files last so they win for latin text. */
+@font-face{font-family:"Playfair Display";src:url("/aegis-site-preview/fonts/PlayfairDisplay-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Playfair Display";src:url("/aegis-site-preview/fonts/PlayfairDisplay-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Playfair Display";src:url("/aegis-site-preview/fonts/PlayfairDisplay-Variable-latin.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Playfair Display";src:url("/aegis-site-preview/fonts/PlayfairDisplay-Italic-Variable-latin.woff2") format("woff2");font-weight:400 900;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Satoshi";src:url("/aegis-site-preview/fonts/Satoshi-Variable.woff2") format("woff2");font-weight:300 900;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("/aegis-site-preview/fonts/IBMPlexMono-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("/aegis-site-preview/fonts/IBMPlexMono-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+
+#philosophy{
+  /* brand */
+  --paper:#fdfaf2; --surface:#f8f3e7; --ink:#282420; --border:#e7dfcd; --muted:#7a7164;
+  --terra:#d96a57;            /* the accent: the rule, links, the emphasized words */
+  --terra-deep:#ad4736;       /* the same family, dark enough for small text on paper */
+
+  /* the Hearth and the Turning: warm darks built from ink and terracotta */
+  --hearth:#16110d; --hearth-2:#221813; --hearth-3:#2a1d16;
+  --cream:#f3ebdc; --cream-2:#d9cfbf; --cream-3:#b3a693;
+  --hair-dark:rgba(243,235,220,.16);
+
+  /* the cold movement */
+  --cold:#0b1220; --cold-1:#dfe6f2; --cold-2:#c5cfe0; --cold-3:#9aa6bb; --cold-accent:#8fb8ff;
+
+  /* faces */
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Satoshi","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  /* the scale */
+  --t-xl:clamp(2.75rem, 1.55rem + 5.1vw, 6.5rem);      /* 44 to 104: the opening line, the line, the close */
+  --t-l:clamp(2.125rem, 1.45rem + 2.9vw, 4.375rem);    /* 34 to 70: the question, the third freedom */
+  --t-m:clamp(1.625rem, 1.25rem + 1.6vw, 2.875rem);    /* 26 to 46: mission, statements, the proof words */
+  --t-s:clamp(1.3125rem, 1.15rem + .7vw, 1.875rem);    /* 21 to 30: quotes, the lead line, the signature */
+  --t-lead:clamp(1.1875rem, 1.05rem + .6vw, 1.625rem); /* 19 to 26: the compelled sentence */
+  --t-body:clamp(1.0625rem, 1rem + .3vw, 1.1875rem);   /* 17 to 19: reading */
+  --t-cap:.9375rem;                                    /* 15: captions, roles, attributions */
+  --t-mono:.8125rem;                                   /* 13: dates, translation, draft note */
+  --t-label:.75rem;                                    /* 12: movement labels, tracked */
+
+  --measure:33em;                                      /* about 64 characters of Satoshi at reading size */
+  --gutter:clamp(1rem, 5vw, 5.5rem);
+  --col-gap:clamp(1rem, 2.2vw, 2.25rem);
+  --sect:clamp(3.3rem, 6.6vw, 6.6rem);
+
+  /* The Turning: where the maple face and the lit slot sit in the 1920 x 1080 frame
+     (measured: face plus slot at x 561 to 1459, y 584 to 999; glow centre x 990, y 620),
+     and how far the light is allowed to fall before the frame goes dark. */
+  --focus-x:52.6%; --focus-y:73.5%; --focus-rx:31%; --focus-ry:24%;
+
+  position:relative;overflow-x:clip;
+  background:var(--hearth);color:var(--cream-2);
+  font-family:var(--sans);font-size:var(--t-body);font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;
+}
+#philosophy *,#philosophy *::before,#philosophy *::after{box-sizing:border-box}
+#philosophy img,#philosophy video{display:block;max-width:100%;border:0}
+#philosophy figure,#philosophy blockquote,#philosophy p,#philosophy h1,#philosophy h2,#philosophy h3,#philosophy ul,#philosophy dl,#philosophy dd,#philosophy footer{margin:0;padding:0}
+#philosophy h1,#philosophy h2,#philosophy h3{font-size:inherit;font-weight:inherit;line-height:inherit}
+#philosophy ul{list-style:none}
+#philosophy a{color:inherit;text-decoration:none}
+#philosophy :focus-visible{outline:2px solid var(--terra);outline-offset:4px}
+#philosophy .cold :focus-visible,#philosophy .line-cold :focus-visible{outline-color:var(--cold-accent)}
+#philosophy ::selection{background:rgba(217,106,87,.35)}
+#philosophy .skip-link{position:fixed;top:1rem;left:1rem;z-index:10;padding:.7rem 1rem;background:var(--paper);color:var(--ink);font:500 var(--t-cap)/1.2 var(--sans);transform:translateY(-200%);transition:transform .18s ease-out}
+#philosophy .skip-link:focus{transform:translateY(0)}
+
+#philosophy .frame{max-width:1360px;margin-inline:auto;padding-inline:var(--gutter)}
+#philosophy .g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--col-gap)}
+#philosophy .g>*{grid-column:1/-1;min-width:0}
+@media (min-width:720px){
+  #philosophy .sp-1-5{grid-column:1/6}#philosophy .sp-1-6{grid-column:1/7}#philosophy .sp-1-7{grid-column:1/8}#philosophy .sp-1-8{grid-column:1/9}#philosophy .sp-1-9{grid-column:1/10}
+  #philosophy .sp-1-10{grid-column:1/11}#philosophy .sp-1-11{grid-column:1/12}#philosophy .sp-2-11{grid-column:2/12}#philosophy .sp-3-10{grid-column:3/11}
+  #philosophy .sp-4-12{grid-column:4/13}#philosophy .sp-5-12{grid-column:5/13}#philosophy .sp-6-12{grid-column:6/13}#philosophy .sp-7-12{grid-column:7/13}#philosophy .sp-8-12{grid-column:8/13}
+}
+
+/* type roles */
+#philosophy .t-xl{font:400 var(--t-xl)/1.02 var(--serif);letter-spacing:-.02em}
+#philosophy .t-l{font:400 var(--t-l)/1.08 var(--serif);letter-spacing:-.015em}
+#philosophy .t-m{font:400 var(--t-m)/1.18 var(--serif);letter-spacing:-.01em}
+#philosophy .t-s{font:400 var(--t-s)/1.3 var(--serif)}
+#philosophy .reading{max-width:var(--measure)}
+#philosophy .reading p+p{margin-top:1.4em}
+#philosophy .accent{color:var(--terra)}
+
+/* movement labels: mono, uppercase, tracked. The only place the movement names appear. */
+#philosophy .mv{
+  display:flex;align-items:center;gap:.9rem;margin:0;
+  font:500 var(--t-label)/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cream-3);
+}
+#philosophy .mv::before{content:"";flex:none;width:2.25rem;height:1px;background:currentColor;opacity:.7}
+
+/* the way home: the mark, small and quiet, top left */
+#philosophy .home{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:-8px 0 0 -8px;opacity:.72;transition:opacity .2s}
+#philosophy .home:hover,#philosophy .home:focus-visible{opacity:1}
+#philosophy .home img{width:28px;height:28px}
+#philosophy .home img.is-missing{display:none}
+#philosophy .home .fn{display:none;font:400 .625rem/1 var(--mono);color:var(--cream-3);white-space:nowrap;padding:.4rem .5rem;border:1px dashed var(--hair-dark)}
+#philosophy .home img.is-missing+.fn{display:block}
+
+/* image frames: the file name shows when the file is not there */
+#philosophy .ph{position:relative;overflow:hidden;background:var(--hearth-3)}
+#philosophy .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;color:transparent;font-size:0}
+#philosophy .ph img.is-missing{visibility:hidden}
+#philosophy .ph .fn{
+  position:absolute;inset:0;display:grid;place-items:center;padding:1rem;text-align:center;
+  font:400 var(--t-mono)/1.4 var(--mono);color:var(--cream-3);overflow-wrap:anywhere;
+}
+#philosophy .paper .ph{background:var(--surface)}
+#philosophy .paper .ph .fn{color:var(--muted)}
+
+/* motion: on load for the first screen, on scroll for everything after, none when the reader asks for none */
+@keyframes philosophy-intro{from{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:none}}
+@keyframes philosophy-rise{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:none}}
+@keyframes philosophy-breathe{0%,100%{opacity:1}50%{opacity:.72}}
+@media (prefers-reduced-motion:no-preference){
+  #philosophy .intro{animation:philosophy-intro 1.4s cubic-bezier(.2,.6,.2,1) both}
+  #philosophy .d1{animation-delay:.15s}#philosophy .d2{animation-delay:.3s}
+  #philosophy .glow{animation:philosophy-breathe 9s ease-in-out infinite}
+  @supports (animation-timeline:view()){
+    #philosophy .rise{animation:philosophy-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+
+/* ============================================================
+   I. THE HEARTH  (sections 1 and 2)
+   ============================================================ */
+#philosophy .hearth{position:relative;isolation:isolate;background:var(--hearth);color:var(--cream-2)}
+#philosophy .hearth .glow{
+  position:sticky;top:0;height:100vh;margin-bottom:-100vh;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(52vw 62vh at 0% 18%, rgba(240,132,84,.34), rgba(217,106,87,.11) 42%, transparent 72%),
+    radial-gradient(30vw 30vh at 6% 78%, rgba(217,106,87,.10), transparent 70%);
+}
+#philosophy .hearth>section{position:relative;z-index:1}
+
+/* 1. Declaration, in two beats. Beat one: the keynote footage under a warm dark scrim, the mark,
+   the motto small, the statement low. Beat two: the sentence and the question, alone on dark. */
+#philosophy .s-declare{position:relative}
+#philosophy .beat-1{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:100svh;padding-block:clamp(1.5rem,3.5vh,2.5rem) clamp(3rem,7vh,5.5rem)}
+#philosophy .beat-1 .beat-inner{position:relative;z-index:1;display:flex;flex-direction:column;flex:1 0 auto;width:100%}
+#philosophy .beat-1 .top{display:flex;flex-direction:column}
+#philosophy .beat-1 .bottom{margin-top:auto}
+#philosophy .hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+#philosophy .hero-media video,#philosophy .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 68%;filter:brightness(1.3) contrast(1.04)}
+#philosophy .hero-video-phone{display:none}
+/* the scrim: heavy where the words sit (low, and left), open where the footage is */
+#philosophy .hero-media::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(to top, var(--hearth) 0%, rgba(22,17,13,.5) 30%, rgba(22,17,13,.28) 58%, rgba(22,17,13,.1) 100%),
+    linear-gradient(to right, rgba(22,17,13,.4) 0%, rgba(22,17,13,.14) 55%, transparent 100%),
+    linear-gradient(to bottom, rgba(22,17,13,.42) 0%, rgba(22,17,13,.1) 35%, transparent 60%);
+}
+#philosophy .s-declare .mv{margin-top:clamp(1.25rem,3.5vh,2.5rem);color:var(--cream-2)}
+#philosophy .motto{margin-top:clamp(2rem,6vh,4.5rem);max-width:34em}
+#philosophy .motto p:first-child{font:italic 400 clamp(1rem,.95rem + .3vw,1.125rem)/1.35 var(--serif);color:var(--cream-2)}
+#philosophy .motto p+p{margin-top:.5rem;font:400 var(--t-label)/1.5 var(--mono);color:var(--cream-2)}
+#philosophy .s-declare h1{margin:clamp(2.5rem,6vh,5rem) 0 clamp(3rem,12vh,7rem);color:var(--cream);max-width:11.5em;text-shadow:0 2px 24px rgba(22,17,13,.5)}
+#philosophy .beat-2{padding-block:clamp(2.7rem,7.2vh,5.4rem) clamp(2.7rem,6.6vh,5.1rem)}
+#philosophy .compelled{font-size:var(--t-lead);line-height:1.45;max-width:42em;color:var(--cream-2)}
+#philosophy .compelled .lead-text{display:block;max-width:32em}
+#philosophy .compelled .q{display:block;margin-top:.9em;font:italic 400 var(--t-m)/1.2 var(--serif);letter-spacing:-.01em;color:var(--terra)}
+@media (min-width:720px){
+  #philosophy .beat-2{min-height:60svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(3rem,14.4vh,9rem)}
+}
+/* short desktop windows: keep the statement on the first screen */
+@media (min-width:720px) and (max-height:780px){
+  #philosophy .s-declare h1{font-size:clamp(2.5rem, 1.3rem + 4.4vw, 5.5rem);margin-top:2rem}
+  #philosophy .motto{margin-top:1.5rem}
+}
+
+/* 2. Founders */
+#philosophy .s-founders{padding-block:var(--sect)}
+#philosophy .founder-list{display:grid;gap:clamp(4rem,9vw,7rem)}
+#philosophy .founder-row{display:grid;gap:clamp(1.75rem,4vw,3.5rem);align-items:start}
+#philosophy .founder-copy{align-self:start;max-width:var(--measure)}
+#philosophy .founder-heading{margin:0 0 1rem;font:650 clamp(1.6rem,1.35rem + 1.1vw,2.35rem)/1.14 var(--serif);letter-spacing:-.01em;color:var(--cream);text-wrap:balance}
+#philosophy .founder-quote p{font:400 var(--t-body)/1.6 var(--sans)}
+#philosophy .founder-quote footer{margin-top:1.25rem;font:italic 400 var(--t-cap)/1.45 var(--serif);color:var(--cream)}
+#philosophy .founder-quote footer span{display:block;margin-top:.2rem;color:var(--cream-3)}
+#philosophy .founder-quote footer a{color:var(--terra);border-bottom:1px solid rgba(217,106,87,.45)}
+#philosophy .founder-row .portrait{width:min(100%,28rem)}
+#philosophy .ph-portrait{aspect-ratio:471/700}
+#philosophy .ph-square{aspect-ratio:1}
+#philosophy .portrait .ph{box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+#philosophy .portrait .ph::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(155deg, rgba(240,132,84,.16), transparent 42%, rgba(22,17,13,.5) 100%);
+}
+#philosophy .portrait figcaption{margin-top:.8rem;font:500 var(--t-cap)/1.4 var(--sans);color:var(--cream)}
+#philosophy .portrait figcaption span{font-weight:400;color:var(--cream-3)}
+@media (min-width:720px){
+  #philosophy .founder-row{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+}
+
+/* the ground eases between movements */
+#philosophy .bridge{height:clamp(4.2rem,12vh,8.4rem)}
+#philosophy .b-hearth-cold{background:linear-gradient(var(--hearth),var(--cold))}
+#philosophy .b-warm-turn{background:linear-gradient(var(--hearth-3),var(--hearth))}
+#philosophy .b-dawn{
+  height:clamp(6rem,20.4vh,14.4rem);
+  background:linear-gradient(180deg,var(--hearth) 0%,#2a1c15 20%,#5a4030 42%,#9c7d63 62%,#d3c1a5 80%,#f1e9d8 92%,var(--paper) 100%);
+}
+
+/* ============================================================
+   II. BEYOND THE LINE  (sections 3 and 4): the hinge
+   ============================================================ */
+#philosophy .line-cold{background:var(--cold);color:var(--cold-1);padding-top:var(--sect)}
+#philosophy .on-line{
+  margin:clamp(3rem,9vh,7rem) 0 0;color:var(--cream);max-width:9.5em;
+  line-height:1;position:relative;z-index:2;transform:translateY(.09em);
+}
+#philosophy .on-line::after{content:"";position:absolute;left:0;bottom:-.14em;width:100%;height:.055em;min-height:3px;background:var(--terra);transform-origin:left center}
+@supports (animation-timeline:view()){
+  #philosophy .on-line::after{transform:scaleX(0);animation:line-underline linear both;animation-timeline:view();animation-range:entry 10% cover 45%}
+  @keyframes line-underline{to{transform:scaleX(1)}}
+}
+#philosophy .rule{display:block;height:2px;margin:0;border:0;background:var(--terra)}
+@media (min-width:1080px){#philosophy .rule{height:3px}}
+#philosophy .line-warm{background:var(--hearth-3);color:var(--cream-2);padding-top:clamp(3.5rem,8vw,6rem);padding-bottom:var(--sect)}
+
+/* 4. Three proofs */
+#philosophy .s-proofs{background:var(--hearth-3);color:var(--cream-2);padding-bottom:var(--sect)}
+#philosophy .lead{margin:0;font:italic 400 var(--t-s)/1.34 var(--serif);color:var(--cream)}
+#philosophy .proofs{display:grid;gap:2.25rem;margin:clamp(3.5rem,8vw,6rem) 0 0;padding:0}
+#philosophy .proofs>div{border-top:1px solid var(--hair-dark);padding-top:1.5rem}
+#philosophy .proofs dt{font:500 var(--t-m)/1.1 var(--serif);letter-spacing:-.01em;color:var(--cream)}
+#philosophy .proofs dd{margin:.9rem 0 0;color:var(--cream-2);max-width:22em}
+#philosophy .proofs .proof-body{margin-top:1.25rem;font:400 var(--t-body)/1.6 var(--sans);color:var(--cream-2);max-width:34em}
+#philosophy .proof-reads{margin-top:1.25rem;font:400 var(--t-mono)/1.55 var(--mono);color:var(--cream-3)}
+#philosophy .proof-reads ul{margin-top:.35rem}
+#philosophy .proof-reads li+li{margin-top:.25rem}
+#philosophy .proof-reads a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(217,106,87,.45);text-underline-offset:.2em}
+@media (min-width:720px){#philosophy .proofs{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--col-gap)}}
+
+/* ============================================================
+   III. THE TURNING  (section 5)
+   ============================================================ */
+#philosophy .turn{background:var(--hearth);color:var(--cream-2)}
+#philosophy .s-object{padding-top:clamp(1rem,2.4vh,1.6rem)}
+#philosophy .machine{position:relative;margin-top:clamp(.75rem,2vh,1.5rem)}
+#philosophy .machine-img{position:relative;overflow:hidden;background:#0a0705;aspect-ratio:4/5;--focus-x:50%;--focus-rx:62%}
+#philosophy .machine-img img,#philosophy .machine-img video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:var(--focus-x) var(--focus-y);color:transparent;font-size:0;
+  filter:brightness(1.5) contrast(1.02); /* Erik, round four: about 50 percent brighter */
+}
+#philosophy .machine-img img.is-missing{visibility:hidden}
+#philosophy .machine-img .object-intro-wide{display:none}
+/* the light is allowed to fall this far; past it the white studio goes to near-black and the gloves recede */
+#philosophy .machine-img::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse var(--focus-rx) var(--focus-ry) at var(--focus-x) var(--focus-y), transparent 0%, transparent 62%, rgba(10,7,5,.22) 100%),
+    radial-gradient(ellipse calc(var(--focus-rx) * 1.9) calc(var(--focus-ry) * 2.2) at var(--focus-x) var(--focus-y), transparent 35%, rgba(10,7,5,.36) 75%, rgba(10,7,5,.47) 100%);
+}
+#philosophy .machine-img .fn{
+  position:absolute;inset:0;display:grid;place-items:center;padding:1rem;text-align:center;
+  font:400 var(--t-mono)/1.4 var(--mono);color:var(--cream-3);
+}
+#philosophy .machine-state{padding:clamp(1.75rem,5vh,3rem) var(--gutter) 0}
+#philosophy .machine-state h2{margin:0;color:var(--cream);max-width:12em}
+@media (min-width:720px){
+  #philosophy .machine-img{aspect-ratio:16/9;max-height:100svh;--focus-x:52.6%;--focus-rx:31%}
+  #philosophy .machine-img .object-intro-wide{display:block}
+  #philosophy .machine-img .object-intro-phone{display:none}
+  #philosophy .machine-state{position:absolute;left:0;bottom:0;padding:0 var(--gutter) clamp(2rem,6vh,4.5rem);width:36%;max-width:30rem}
+}
+#philosophy .refusals{margin:clamp(3rem,7.8vh,5.7rem) 0 0;padding:0 0 var(--sect);color:var(--cream)}
+#philosophy .refusals li{font:400 clamp(1.3rem, .35rem + 4.5vw, 4.375rem)/1.1 var(--serif);letter-spacing:-.015em}
+#philosophy .refusals li+li{margin-top:.32em}
+#philosophy .refusals li.accent{color:var(--terra)}
+
+/* ============================================================
+   IV. WELCOME HOME  (sections 6 to 8): paper
+   ============================================================ */
+#philosophy .paper{background:var(--paper);color:var(--ink)}
+#philosophy .paper .mv{color:var(--muted)}
+#philosophy .s-open{padding-block:var(--sect)}
+#philosophy .s-open .g{row-gap:clamp(3.5rem,9vh,7rem)}
+#philosophy .open-essay{display:flex;flex-direction:column;align-items:start}
+#philosophy .open-image{width:100%;aspect-ratio:4/3;object-fit:cover}
+#philosophy .open-essay h2{margin:clamp(1.25rem,3vw,2rem) 0 0;font:600 clamp(1.5rem,1.25rem + 1vw,2.125rem)/1.18 var(--serif);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+#philosophy .open-essay h2 a{background:linear-gradient(var(--terra),var(--terra)) no-repeat 0 100%/100% 1px}
+#philosophy .open-essay>p{margin:.9rem 0 0;max-width:34em;font:400 var(--t-body)/1.6 var(--sans);color:var(--ink)}
+#philosophy .open-essay .read-link{margin-top:1rem;font:500 var(--t-cap)/1.4 var(--sans);color:var(--terra-deep);text-decoration:underline;text-decoration-color:var(--terra);text-underline-offset:.22em}
+#philosophy .open-pair{grid-column:1/-1;display:grid;gap:clamp(2.5rem,6vw,5rem)}
+#philosophy .open-head{font:500 var(--t-l)/1.08 var(--serif);letter-spacing:-.02em;color:var(--ink);max-width:14em;margin:clamp(1.25rem,3vh,2rem) 0 clamp(1.75rem,4vh,3rem)}
+@media (min-width:720px){#philosophy .open-pair{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}}
+
+#philosophy .s-read{padding-bottom:var(--sect)}
+#philosophy .lab{margin:0;font:500 var(--t-label)/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+#philosophy .featured{margin:2rem 0 0;padding:0;display:grid;gap:2.25rem}
+#philosophy .featured li{border-top:1px solid var(--border);padding-top:1.25rem}
+#philosophy .featured h3{margin:0;font:500 clamp(1.375rem,1.2rem + .8vw,1.875rem)/1.15 var(--serif);letter-spacing:-.01em;color:var(--ink)}
+#philosophy .featured h3 a{
+  color:var(--ink);
+  background:linear-gradient(var(--terra),var(--terra)) no-repeat 0 100%/100% 1px;
+}
+#philosophy .featured h3 a:hover{color:var(--terra-deep)}
+#philosophy .featured p{margin:.9rem 0 0;color:var(--muted);max-width:26em}
+#philosophy .soon{
+  display:inline-block;margin-left:.6em;vertical-align:.38em;padding:.32em .5em .28em;
+  font:500 .6875rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terra-deep);border:1px solid rgba(173,71,54,.45);
+}
+@media (min-width:720px){#philosophy .featured{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--col-gap)}}
+#philosophy .library{margin-top:clamp(4.5rem,9vw,7rem)}
+#philosophy .essays{margin:1.5rem 0 0;padding:0;border-top:1px solid var(--border)}
+#philosophy .essays li{
+  break-inside:avoid;display:flex;justify-content:space-between;align-items:baseline;gap:1.25rem;
+  padding:.85rem 0;border-bottom:1px solid var(--border);
+}
+#philosophy .essays a{color:var(--ink);font-weight:500}
+#philosophy .essays a:hover{color:var(--terra-deep);text-decoration:underline;text-decoration-color:var(--terra);text-underline-offset:.2em}
+#philosophy .essays time{font:400 var(--t-mono)/1.5 var(--mono);color:var(--muted);white-space:nowrap;flex:none}
+@media (max-width:719.98px){#philosophy .essays li{flex-direction:column;align-items:flex-start;gap:.15rem}}
+@media (min-width:900px){#philosophy .essays{columns:2;column-gap:var(--col-gap)}}
+
+#philosophy .s-close{padding-block:var(--sect) clamp(3rem,8vh,6rem)}
+#philosophy .s-close .g{row-gap:0}
+#philosophy .s-close h2{margin:0;color:var(--ink);max-width:11em}
+#philosophy .ps{margin-top:clamp(2.5rem,6vh,4rem);max-width:var(--measure)}
+#philosophy .ps a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--terra);text-decoration-thickness:1px;text-underline-offset:.22em}
+#philosophy .ps a:hover{color:var(--terra-deep)}
+#philosophy .mark{margin-top:clamp(6rem,16vh,12rem);display:flex;flex-direction:column;align-items:center;gap:1rem}
+#philosophy .mark .badge{position:relative;height:48px;min-width:48px}
+#philosophy .mark .badge img{height:48px;width:auto;color:transparent;font-size:0}
+#philosophy .mark .badge img.is-missing{display:none}
+#philosophy .mark .badge .fn{
+  display:none;height:48px;align-items:center;padding:0 .75rem;border:1px dashed var(--border);
+  font:400 .625rem/1 var(--mono);color:var(--muted);white-space:nowrap;
+}
+#philosophy .mark .badge img.is-missing+.fn{display:flex}
+#philosophy .mark .site{font:400 var(--t-mono)/1 var(--mono);letter-spacing:.06em;color:var(--ink)}
+@media (max-width:719.98px){
+  #philosophy .hero-video-wide{display:none}#philosophy .hero-video-phone{display:block}
+  #philosophy .hero-media video,#philosophy .hero-media img{object-position:38% 68%}
+  /* phones: the poster's lit slot sits at 48% of the hero's height; lift the statement so "philosophical" (line two) starts just under it */
+  #philosophy .s-declare h1{margin-bottom:max(2rem,calc(43svh - 10.5rem))}
+}
+@media (prefers-reduced-motion:reduce){
+  #philosophy .hero-media video{display:none}
+  #philosophy .machine-img video.object-intro{display:none}
+  #philosophy .on-line::after{transform:scaleX(1);animation:none}
+}
+</style>
+</head>
+<body>
+<div id="philosophy">
+<a class="skip-link" href="#main">Skip to main content</a>
+<main id="main">
+
+<!-- ======================================================== I. THE HEARTH -->
+<div class="hearth">
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- 1. Declaration -->
+  <section class="s-declare" aria-labelledby="h-declare">
+    <div class="beat beat-1">
+      <div class="hero-media" aria-hidden="true">
+        <picture><source media="(max-width:719.98px)" srcset="img/hero-hold-phone.jpg"><img src="img/hero-hold-wide.jpg" alt="" width="1920" height="1080" decoding="async" fetchpriority="high"></picture>
+        <video class="hero-intro hero-video-wide" muted playsinline preload="none" poster="img/hero-hold-wide.jpg"><source src="video/hero-intro-wide.mp4" type="video/mp4"></video>
+        <video class="hero-intro hero-video-phone" muted playsinline preload="none" poster="img/hero-hold-phone.jpg"><source src="video/hero-intro-phone.mp4" type="video/mp4"></video>
+      </div>
+      <div class="frame beat-inner">
+        <div class="top">
+          <a class="home intro" href="/aegis-site-preview/" aria-label="vora.io">
+            <img src="img/badger-cream.svg" alt="" width="28" height="28" onerror="this.classList.add('is-missing')">
+            <span class="fn" aria-hidden="true">img/badger-cream.svg</span>
+          </a>
+          <p class="mv intro d1">I. The Hearth</p>
+          <div class="motto intro d1">
+            <p>Vi veri veniversum vivus vici voravi</p>
+            <p>By the power of truth, I, while living, have conquered and devoured the universe</p>
+          </div>
+        </div>
+        <div class="bottom">
+          <h1 id="h-declare" class="t-xl intro d2">Vora is a <span class="accent">philosophical</span> company before it is a hardware company.</h1>
+        </div>
+      </div>
+    </div>
+    <div class="beat beat-2 frame">
+      <p class="compelled rise"><span class="lead-text">The principles came first, and they were not chosen, but compelled by the question:</span> <span class="q">“What does it mean to be sovereign in the age of AI?”</span></p>
+    </div>
+  </section>
+
+  <!-- 2. Founders -->
+  <section class="s-founders frame" aria-labelledby="h-founders">
+    <div class="founder-list">
+      <article class="founder-row">
+        <figure class="portrait rise">
+          <div class="ph ph-square">
+            <span class="fn" aria-hidden="true">img/jesse-x.jpg</span>
+            <img src="img/jesse-x.jpg" alt="Jesse Posner, co-founder of Vora" width="400" height="400" onerror="this.classList.add('is-missing')">
+          </div>
+        </figure>
+        <div class="founder-copy rise">
+          <h2 id="h-founders" class="founder-heading">That lesson has come due for the mind.</h2>
+          <blockquote class="founder-quote">
+            <p>We spent our careers securing Bitcoin, and one lesson survived every disaster we watched: promises fail, policies bend, and the only guarantees that hold are the ones built into the architecture itself and cryptographically proven. So what truly matters must live on hardware you own, under keys you hold. That lesson has come due for the mind.</p>
+            <footer>Jesse Posner, Co-founder<span>Coinbase. Bitkey. His work on FROST.</span></footer>
+          </blockquote>
+        </div>
+      </article>
+      <article class="founder-row">
+        <figure class="portrait rise">
+          <div class="ph ph-portrait">
+            <span class="fn" aria-hidden="true">img/erik-press.jpg</span>
+            <img src="img/erik-press.jpg" alt="Erik Cason, co-founder of Vora" width="471" height="700" onerror="this.classList.add('is-missing')">
+          </div>
+        </figure>
+        <div class="founder-copy rise">
+          <h2 class="founder-heading">One purpose: the defense of free thought.</h2>
+          <blockquote class="founder-quote">
+            <p>Vora is a company with one purpose: the defense of free thought in the age of AI. Everything we build, everything we open-source, every machine we ship, exists to put the instruments of intelligence into the hands of the people who think with them, and to keep them there.</p>
+            <footer>Erik Cason, Co-founder<span>Coinbase. Unchained Capital. Author of Cryptosovereignty.</span><span>from <cite><a href="/aegis-site-preview/blog/what-vora-is/">What Vora Is</a></cite></span></footer>
+          </blockquote>
+        </div>
+      </article>
+      <article class="founder-row">
+        <figure class="portrait rise">
+          <div class="ph ph-portrait">
+            <span class="fn" aria-hidden="true">img/nick-headshot.png</span>
+            <img src="img/nick-headshot.png" alt="Nick George, Head of Hardware at Vora" onerror="this.classList.add('is-missing')">
+          </div>
+        </figure>
+        <div class="founder-copy rise">
+          <h2 class="founder-heading">Things they’ve never shared with anyone.</h2>
+          <blockquote class="founder-quote">
+            <p>We thought about the things someone might eventually trust Aegis with. Their memories. Their ideas. Things they’ve never shared with anyone. That responsibility is why we built dedicated security hardware into it. We want people to feel that they have control over something deeply personal.</p>
+            <footer>Nick George, Head of Hardware<span>Apple. Face ID for iPhone 13 and 14. Magic Leap. Block. Bitkey. Owns the entire hardware path for Aegis.</span></footer>
+          </blockquote>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<div class="bridge b-hearth-cold" aria-hidden="true"></div>
+
+<!-- ======================================================== II. BEYOND THE LINE -->
+<!-- 3. The Line: a hard cut. Cold above the rule, warm below it. -->
+<section class="s-line" aria-labelledby="h-line">
+  <div class="line-cold">
+    <div class="frame">
+      <p class="mv rise">II. Beyond the Line</p>
+      <h2 id="h-line" class="t-xl on-line">Thought belongs to the thinker.</h2>
+    </div>
+  </div>
+  <hr class="rule" aria-hidden="true">
+  <div class="line-warm">
+    <div class="frame g">
+      <div class="sp-1-7 reading">
+        <p class="rise">We draw the line at the site of cognition itself. Inward of that line, no company, no committee, and no state holds any authority at all. Your machine thinks with you, about whatever you ask it to think about, and answers to you alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Three Proofs -->
+<section class="s-proofs" aria-label="Three proofs">
+  <div class="frame">
+  <div class="g">
+    <p class="lead sp-2-11 rise">An intelligence bound to you the way your lawyer and your doctor are bound to you, except the binding is not law, which bends, but structure, which does not.</p>
+  </div>
+  <dl class="proofs">
+    <div class="rise"><dt>Privacy.</dt><dd>Proved by encryption, not policy.</dd><p class="proof-body">Privacy is not a setting. A policy is a promise made by the party that profits from breaking it. Encryption is a fact of mathematics: what is sealed under your key cannot be read by anyone who does not hold it, not by a company, not by a court, not by us. Aegis keeps your life inside that seal. The machine that knows you cannot reach the internet, and the machine that reaches the internet never knows you.</p><div class="proof-reads">Read:<ul><li><a href="/aegis-site-preview/blog/the-chernobyl-of-data/">The Chernobyl of Data</a></li><li><a href="/aegis-site-preview/blog/architecture-of-invisibility/">The Invisible Architecture of AI</a></li><li><a href="/aegis-site-preview/blog/cognitive-sovereignty/">Cognitive Sovereignty</a></li></ul></div></div>
+    <div class="rise"><dt>Integrity.</dt><dd>Proved by verification, not reputation.</dd><p class="proof-body">Trust is what you extend when you cannot check. We would rather you check. Every line of Aegis is open, from the firmware to the model that thinks with you, so integrity is not our reputation but your verification: read it, build it, compare the hash. A machine you cannot inspect is asking for faith. Ours is asking to be audited.</p><div class="proof-reads">Read:<ul><li><a href="/aegis-site-preview/blog/fiduciary-ai/">Fiduciary AI</a></li><li><a href="/aegis-site-preview/blog/your-ai-s-terms-of-service-are-a-confession/">Your AI's Terms of Service Are a Confession</a></li><li><a href="/aegis-site-preview/blog/the-overton-window-is-in-the-weights/">The Overton Window Is in the Weights</a></li></ul></div></div>
+    <div class="rise"><dt>Loyalty.</dt><dd>Proved by keyholder control, not alignment theater.</dd><p class="proof-body">Loyalty is a question of who holds the keys. An assistant that answers to a corporation will, on the day it matters, answer to the corporation. Aegis answers to the keyholder, and the keyholder is you: no remote kill, no silent update, no second master. Not alignment theater, in which a model is trained to sound obedient, but the plain fact of custody.</p><div class="proof-reads">Read:<ul><li><a href="/aegis-site-preview/blog/not-your-keys-not-your-mind/">Not Your Keys, Not Your Mind</a></li><li><a href="/aegis-site-preview/blog/your-ai-is-not-yours/">Your AI Is Not Yours</a></li><li><a href="/aegis-site-preview/blog/the-intimacy-machine/">The Intimacy Machine</a></li></ul></div></div>
+  </dl>
+  </div>
+</section>
+
+<div class="bridge b-warm-turn" aria-hidden="true"></div>
+
+<!-- ======================================================== III. THE TURNING -->
+<div class="turn">
+  <!-- 5. The Object -->
+  <section class="s-object" aria-labelledby="h-object">
+    <div class="frame"><p class="mv rise">III. The Turning</p></div>
+    <figure class="machine">
+      <div class="machine-img">
+        <span class="fn" aria-hidden="true">img/hero-turn-wide.jpg</span>
+        <picture><source media="(max-width:719.98px)" srcset="img/hero-turn-phone.jpg"><img src="img/hero-turn-wide.jpg" alt="Aegis lit in a dark room" onerror="this.classList.add('is-missing')"></picture>
+        <video class="object-intro object-intro-wide" muted playsinline preload="none" poster="img/hero-turn-wide.jpg" aria-hidden="true" tabindex="-1"><source src="video/hero-intro-wide.mp4" type="video/mp4"></video>
+        <video class="object-intro object-intro-phone" muted playsinline preload="none" poster="img/hero-turn-phone.jpg" aria-hidden="true" tabindex="-1"><source src="video/hero-intro-phone.mp4" type="video/mp4"></video>
+      </div>
+      <figcaption class="machine-state">
+        <h2 id="h-object" class="t-m rise">A machine that holds your life should look like it belongs in it.</h2>
+      </figcaption>
+    </figure>
+
+    <div class="frame">
+      <ul class="refusals" role="list">
+        <li class="rise">It does not phone home.</li>
+        <li class="rise">It does not spy on you.</li>
+        <li class="rise accent">It does not serve two masters.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="bridge b-dawn" aria-hidden="true"></div>
+
+<!-- ======================================================== IV. WELCOME HOME -->
+<div class="paper">
+  <!-- 6. Open Source -->
+  <section class="s-open frame" aria-labelledby="h-open">
+    <p class="mv rise">IV. Welcome Home</p>
+    <h2 id="h-open" class="t-l open-head rise">It serves you. <span class="accent">Welcome home.</span></h2>
+    <div class="g">
+      <div class="open-pair">
+        <article class="open-essay rise"><img class="open-image" src="img/c2-hearth-grounded.jpg" alt="A living room with a fire, the machine on the sideboard" loading="lazy"><h2><a href="/aegis-site-preview/blog/architecture-of-return/">The Architecture of Return</a></h2><p>How we take our data, memory and intelligence back from the platforms: personal hardware, private keys, and an AI that serves you.</p><a class="read-link" href="/aegis-site-preview/blog/architecture-of-return/">Read the essay</a></article>
+        <article class="open-essay rise"><img class="open-image" src="img/c1-family-grounded.jpg" alt="A child in a lamplit room, the machine on the sideboard" loading="lazy"><h2><a href="/aegis-site-preview/blog/fiduciary-ai/">Fiduciary AI: The Architecture of Freedom</a></h2><p>Jesse Posner on why whoever controls your AI controls your mind, and why the only answer is architectural sovereignty.</p><a class="read-link" href="/aegis-site-preview/blog/fiduciary-ai/">Read the essay</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Read Further -->
+  <section class="s-read frame" aria-labelledby="h-read">
+    <h2 id="h-read" class="lab rise">In our own words</h2>
+    <ul class="featured">
+      <li class="rise">
+        <h3><a href="/aegis-site-preview/blog/what-vora-is/">What Vora Is</a></h3>
+        <p>A call to arms for the freedom of thought in the age of AI.</p>
+      </li>
+      <li class="rise">
+        <h3><a href="/aegis-site-preview/blog/not-your-keys-not-your-mind/">Not Your Keys, Not Your Mind</a></h3>
+        <p>Whoever controls the infrastructure of cognition controls everything below it without ever firing a shot.</p>
+      </li>
+      <li class="rise">
+        <h3><a href="/aegis-site-preview/blog/what-is-aegis/">What Is Aegis</a></h3>
+        <p>The part of the machine that knows you cannot touch the internet, and the part that touches the internet never knows you.</p>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- 8. Close -->
+  <section class="s-close frame" aria-labelledby="h-close">
+    <div class="g">
+      <div>
+        <h2 id="h-close" class="t-xl rise">It is a small machine with a long line behind it. <span class="accent">Bring your life home.</span></h2>
+        <p class="ps rise">P.S. Would you like to reserve your Aegis now? <a href="https://shop.vora.io/products/vora-aegis-vip-deposit">Click here.</a></p>
+      </div>
+    </div>
+    <div class="mark rise">
+      <div class="badge">
+        <img src="img/badger-ink.svg" alt="Vora badger mark" height="48" onerror="this.classList.add('is-missing')">
+        <span class="fn" aria-hidden="true">img/badger-ink.svg</span>
+      </div>
+      <p class="site">vora.io</p>
+    </div>
+  </section>
+</div>
+
+</main>
+</div>
+<script>
+/* Plays the visible object film once when it enters the viewport and holds it at 3.7 seconds:
+   the zoom-out is complete and the room is still dark (the footage then brightens into the
+   homepage's light hero, which this dark movement does not want). Without this script, and
+   under reduced motion, the page shows the 3.7-second still. */
+(function(){
+  var root=document.getElementById('philosophy');
+  if(!root||!('IntersectionObserver' in window)||!window.matchMedia)return;
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var videos=Array.prototype.slice.call(root.querySelectorAll('video.object-intro'));
+  function shown(v){return getComputedStyle(v).display!=='none'}
+  videos.forEach(function(v){v.addEventListener('timeupdate',function(){if(v.currentTime>=3.7)v.pause()})});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting||still.matches||!shown(e.target))return;
+      if(e.target.preload==='none')e.target.preload='auto';
+      var p=e.target.play();if(p&&p.catch)p.catch(function(){});
+      io.unobserve(e.target);
+    });
+  },{threshold:0.15});
+  videos.forEach(function(v){io.observe(v)});
+  var onChange=function(){videos.forEach(function(v){if(still.matches)v.pause()})};
+  if(still.addEventListener)still.addEventListener('change',onChange);
+})();
+(function(){
+  var videos=document.querySelectorAll('.hero-intro');
+  for(var i=0;i<videos.length;i++){
+    (function(video){
+      /* only the video the viewport shows is fetched and played (the other one, and reduced motion, stay on the poster) */
+      if(getComputedStyle(video).display==='none')return;
+      video.addEventListener('timeupdate',function(){if(video.currentTime>=3.4)video.pause()});
+      video.addEventListener('error',function(){video.style.display='none'});
+      video.preload='auto';
+      var attempt=video.play();if(attempt&&attempt.catch)attempt.catch(function(){video.style.display='none'});
+    })(videos[i]);
+  }
+})();
+</script>
+<div style="position:fixed;left:10px;bottom:10px;background:#1f1b17;color:#fff;padding:6px 10px;border-radius:999px;font:600 12px system-ui;z-index:99">PREVIEW, not live</div></body>
+</html>
